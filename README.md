@@ -52,7 +52,7 @@ Then, Git clone this repo to your PC
 Create a virtual environment
 
     $ virtualenv .venv && source .venv/bin/activate
-Install dependancies
+Install dependencies
 
     $ pip install -r requirements.txt
 Make migrations & migrate
@@ -71,5 +71,7 @@ Create Super user
 $ docker build .
 $ docker-compose build
 $ docker-compose run app sh -c "django-admin startproject app ."
-
+$ docker-compose run app sh -c "python manage.py test -v 2 && flake8"
+$ docker-compose run app sh -c "python manage.py startapp core"
+$ docker-compose run app sh -c "python manage.py makemigrations && python manage.py migrate"
 

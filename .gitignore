@@ -16,12 +16,8 @@
 *.swp
 
 # cached files
-configuration/__pycache__/
-app_dir/__pycache__/
-app_dir/api/__pycache__/
+app/__pycache__/
 loglib/__pycache__/
-/app_dir/static/dist/*
-utilities/__pycache__/
 */__pycache__/*
 
 
@@ -41,7 +37,6 @@ coverage/
 .elasticbeanstalk/config.yml
 log/*
 
-*.pyc
 __pycache__/
 *.cpython-36.pyc
 .sass-cache/*
@@ -55,14 +50,14 @@ update-env.py
 
 *.log
 *.retry
-#Coverage
 .coverage
 
-#vscode ide
+#vcsode ide
 .vscode
+.history
 
-/app_dir/*/migrations/*
-!/app_dir/*/migrations/__init__.py
+/app/*/migrations/*
+!/app/*/migrations/__init__.py
 
 !.gitignore
 !.travis.yml
@@ -70,11 +65,6 @@ update-env.py
 */migrations/*
 !*/migrations/__init__.py
 
-static_cdn/*
-
-.idea
-.vscode
-.history
 
 
 
