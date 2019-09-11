@@ -68,10 +68,10 @@ Create Super user
 ### Run Tests
     $ python manage.py test -v 2
 
-$ docker build .
-$ docker-compose build
-$ docker-compose run app sh -c "django-admin startproject app ."
-$ docker-compose run app sh -c "python manage.py test -v 2 && flake8"
-$ docker-compose run app sh -c "python manage.py startapp core"
-$ docker-compose run app sh -c "python manage.py makemigrations && python manage.py migrate"
+    $ docker build .
+    $ docker-compose build
+    $ docker-compose run app sh -c "django-admin startproject app ."
+    $ docker-compose run app sh -c "python manage.py test -v 2 && flake8"
+    $ docker-compose run app sh -c "python manage.py startapp core"
+    $ docker-compose run app sh -c "python manage.py makemigrations && python manage.py migrate"
 
