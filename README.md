@@ -74,4 +74,6 @@ Create Super user
     $ docker-compose run app sh -c "python manage.py test -v 2 && flake8"
     $ docker-compose run app sh -c "python manage.py startapp core"
     $ docker-compose run app sh -c "python manage.py makemigrations && python manage.py migrate"
+    $ docker-compose up
+    $ docker-compose run app sh -c "python manage.py createsuperuser"
 

@@ -3,8 +3,8 @@ LABEL maintainer="torikraju@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
 
-RUN rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
+#RUN rm -rf /var/cache/apk/* && \
+#    rm -rf /tmp/*
 COPY ./requirements.txt /requirements.txt
 RUN apk add --update --no-cache postgresql-client
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
