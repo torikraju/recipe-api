@@ -76,4 +76,5 @@ Create Super user
     $ docker-compose run app sh -c "python manage.py makemigrations && python manage.py migrate"
     $ docker-compose up
     $ docker-compose run app sh -c "python manage.py createsuperuser"
+    $ docker-compose run --rm app sh -c "python manage.py startapp user"
 
