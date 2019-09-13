@@ -14,11 +14,9 @@ TAGS_URL = reverse('recipe:tag-list')
 
 
 def get_user():
-    profile = faker.profile(fields=None, sex=None)
-    password = faker.password()
     return {
-        'email': profile['mail'],
-        'password': password
+        'email': faker.profile(fields=None, sex=None)['mail'],
+        'password': faker.password()
     }
 
 
@@ -60,7 +58,10 @@ class PrivateTagsApiTests(TestCase):
         """Test that tags returned are for authenticated user"""
         user = User.objects.create_user(**get_user())
         Tag.objects.create(user=user, name=faker.word(ext_word_list=None))
-        tag = Tag.objects.create(user=self.user, name=faker.word(ext_word_list=None))
+        tag = Tag.objects.create(
+            user=self.user,
+            name=faker.word(ext_word_list=None)
+        )
 
         res = self.client.get(TAGS_URL)
 
