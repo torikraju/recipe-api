@@ -1,3 +1,4 @@
+import random
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from faker import Factory
@@ -60,3 +61,14 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(ingredient), ingredient.name)
+
+    def test_recipe_str(self):
+        """Test the recipe string representation"""
+        recipe = models.Recipe.objects.create(
+            user=sample_user(),
+            title=faker.sentence(nb_words=6)[:-1],
+            time_minutes=random.randint(1, 20),
+            price=round(random.uniform(1, 100), 2)
+        )
+
+        self.assertEqual(str(recipe), recipe.title)
